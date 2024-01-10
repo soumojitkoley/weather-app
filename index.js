@@ -32,7 +32,6 @@ yourWeatherButton.addEventListener('click', () => {
                     getHumidity.style.display = 'none';
                     getClouds.style.display = 'none';
                     setFlagIcon.style.display = 'none';
-                    //wrapper.style.height = '580px';
                     wrapper.style.transition = '0.3s linear';
                     yourWeatherButton.style.backgroundImage = 'linear-gradient( 112.1deg,  rgba(32,38,57,1) 11.4%, rgba(63,76,119,1) 70.2% )';
                     searchWeatherButton.style.backgroundImage = 'none';
@@ -69,7 +68,6 @@ yourWeatherButton.addEventListener('click', () => {
 })
 
 searchWeatherButton.addEventListener('click', () => {
-
     wrapper.style.height = '300px';
     wrapper.style.transition = '0.3s linear';
     yourWeatherButton.style.backgroundImage = 'none';
@@ -78,12 +76,10 @@ searchWeatherButton.addEventListener('click', () => {
     searchButton.style.display = 'block';
     grantLocationIcon.style.display = 'none';
     grantLocationButton.style.display = 'none';
-
     showWeatherIcon.style.display = 'none';
     showTemp.style.display = 'none';
     showCity.style.display = 'none';
     setFlagIcon.style.display = 'none';
-
     getWindSpeed.style.display = 'none';
     getHumidity.style.display = 'none';
     getClouds.style.display = 'none';
@@ -96,13 +92,12 @@ grantLocationButton.addEventListener('click', () => {
 
 function getUserLocation() {
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition, showError);
-        
+        navigator.geolocation.getCurrentPosition(showPosition, showError); 
         grantLocationIcon.style.display = 'none';
-    grantLocationButton.style.display = 'none';
-    loader.style.display = 'block';
-
-    } else {
+        grantLocationButton.style.display = 'none';
+        loader.style.display = 'block';
+    } 
+    else {
         alert("Geolocation is not supported by your browser");
     }
 }
@@ -110,7 +105,6 @@ function getUserLocation() {
 function showPosition(position) {
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
-
     getWeatherByLL(latitude, longitude);
 }
 
@@ -140,10 +134,8 @@ async function getWeatherByLL(lat, lon) {
     wrapper.style.height = '550px';
     try {
         let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`);
-
         let data = await response.json();
 
-        console.log(data);
         displayPhoto(data);
         displayData(data);
     }
@@ -208,13 +200,10 @@ async function getWeather(cityName) {
 
     try {
         let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}&units=metric`);
-
         let data = await response.json();
-        console.log(data);
 
         if(data.cod == "404") {
             displayCityError(data);
-
         }
         else{
             displayPhoto(data);
