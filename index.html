@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="shortcut icon" href="icons/favicon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="heading">
+            <h1>Weather App</h1>
+        </div>
+        <div class="header">
+            <div class="your-weather" >
+                <p>Your Weather </p>
+            </div>
+            <div class="search-weather">
+                <p>Search Weather</p>
+            </div>
+        </div>
+        <div class="location-permit">
+            <img src="icons/location-Icon.png" alt="" class="location-icon">
+            <button class="permit-btn">Grant Location Access</button>
+        </div>
+        <div class="middle">
+            <div class="search">
+                <input type="text" name="" id="" placeholder="Enter City Name" class="search-box">
+                <button class="search-btn"><i class="fa fa-search"></i></button>
+            </div>
+            <div class="photo-temp-city">
+                <div class="photo">
+                    <img src="" alt="" class="weather-icon">
+                </div>
+                <div class="temp">
+                    <h1 class="show-temp"></h1>
+                </div>
+                <div class="city-name">
+                    <h2 class="show-city-name"></h2>
+                    <img class="flag-icon" src="">
+                </div>
+            </div>
+        </div>
+        <div class="loader" style="display: none;"></div>
+        <div class="footer">
+            <div class="wind-speed">
+                <img src="icons/wind-speed.png" alt="">
+                <p>WINDSPEED</p>
+                <p class="set-wind-speed"></p>
+            </div>
+            <div class="humidity">
+                <img src="icons/humidity.png" alt="">
+                <p>HUMIDITY</p>
+                <p class="set-humidity"></p>
+            </div>
+            <div class="clouds">
+                <img src="icons/cloud.png" alt="">
+                <p>CLOUDS</p>
+                <p class="set-clouds"></p>
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
